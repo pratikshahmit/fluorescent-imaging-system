@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>plaque detection</title>
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+<script src='image.js'></script>
+<style>
+	body {
+		padding-top:50px;
+		padding-left:110px;
+		padding-right:50px;
+		font-family:sans-serif;
+		display:block;
+	}
+	.button {
+		font-size:16pt;
+		background-color: white;
+		color: black;
+		padding:5px;
+		cursor:default;
+		border:1px solid black;
+		margin-right:10px;		
+		cursor:pointer;
+	}
+
+	.button:hover {
+		background-color: black;
+		color: white;
+	}
+
+	canvas {
+		padding-top:5px;
+		padding-bottom:20px;
+		padding-right:20px;
+	}
+
+	a {
+		text-decoration:none;
+	}
+
+	input[type='file'] {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		z-index: -1;
+	}
+
+	#score {
+		visibility:hidden;
+		padding-top:10px;
+	}
+
+	#cc {
+		width:30px;
+		vertical-align:middle;
+		background-color:white;
+		cursor:pointer;
+	}
+
+	#cc:hover{
+	    -webkit-filter: invert(100%);
+
+	}
+
+	.clicked {
+		font-size:16pt;
+		background-color: black;
+		color: white;
+		padding:5px;
+		cursor:default;
+		border:1px solid black;
+		margin-right:10px;
+		text-decoration:none;
+	}
+
+</style>
+</head>
+
+<body>
+	<div style='padding-top:20px;font-size:24pt;'>
+  		<span>Red fluorescence plaque detection</span>
+	</div>
+	<div style='float:left;width:40%;padding-right:10%'>
+		<div style='padding-top:20px'>1. Choose a red fluorescence image from your computer.</div>
+		<div>2. Segment it.</div>
+		<div>3. Save it!</div>
+		<div style='padding-top:20px;padding-bottom:20px;'>
+			<span style='margin-left:-5px'>
+				<input type="file" id="imageLoader" name="imageLoader"/>
+				<label class='button' for="imageLoader">choose image</label>
+			</span>
+			<span class='button' id='segmentButton'>segment</span>
+			<a class='button' id='saveButton' href='#' download="">save</a>
+		</div>
+		<canvas id='canvasy' width="512" height="384"></canvas>
+		<div style='font-size:14pt'>plaque coverage ratio: <span id='ratio'>&nbsp;</span></div>
+	</div>
+
+<script>
+$(document).ready(function(){
+	$('#segmentButton').click(function(){
+		var precanvas = $('#canvasy').get(0);
+		var canvas = $('#canvasy').get(0).getContext('2d');
+		var imgData = canvas.getImageData(0, 0, precanvas.width, precanvas.height);
+		im = canvas2matrix(imgData.data, precanvas.width, precanvas.height);		
+		imnormeq = histeq(normalize(im), 0);
+		imhsv = rgb2hsv_retry(imnormeq);
+		imhsveq = histeq(imhsv, 2)
+		imnormlabnorm = normalize(rgb2lab(normalize(im)));
+		segmentationPlaque = segment(imhsveq, .82, .1, .15, 1, .1, 1);
+		segmentationTeeth = segmentTeeth(imnormlabnorm, 0, 1, 0, .55, 0, 1);
+		numTruePixels = segmentationPlaque.n;
+		numTeethPixels = segmentationTeeth.n;
+		bw = segmentationPlaque.bw;
+		im = mask(im, bw);
+		imgData = matrix2imgData(im, canvas);
+		$('#canvasy').get(0).getContext('2d').putImageData(imgData, 0, 0);
+		$('#ratio').text((numTruePixels / (numTruePixels + numTeethPixels)).toFixed(4).toString());
+	});
+
+	$('#saveButton').click(function(){
+		var dt = $('#canvasy').get(0).toDataURL('image/png');
+		/* Change MIME type to trick the browser to downlaod the file instead of displaying it */
+		dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
+		var filename = "segmented_" + imageName;
+		dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=' + filename);
+		$('#saveButton').attr('href', dt);
+		$('#saveButton').attr('download', filename);
+	});
+
+
+	$('input[type=file]').change(function(e) {
+		var imageLoader = document.getElementById('imageLoader');
+		var canvas = document.getElementById('canvasy');
+		var ctx = canvas.getContext('2d');
+		var reader = new FileReader();
+    	reader.onload = function(event){
+	        var img = new Image();
+	        img.onload = function(){
+	            canvas.width = img.width;
+	            canvas.height = img.height;
+	            ctx.drawImage(img,0,0);
+	        }
+	        img.src = event.target.result;
+	    }
+    	reader.readAsDataURL(e.target.files[0]);
+    	imageName = e.target.files[0].name;
+	});
+
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+
+<!-- saved from url=(0076)http://web.media.mit.edu/~pratiks/biomarker-imaging/device-construction.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Device Construction</title>
+<link rel="icon" href="./Device Construction_files/cc.png">
+<style>
+	#cc {
+		cursor:pointer;
+		width:30px;
+		vertical-align:middle;
+		background-color:white;
+	}
+
+	#cc:hover{
+	    -webkit-filter: invert(100%);
+
+	}
+
+	.list {
+		padding-top:40px;
+	}
+
+	body {
+		padding-top:50px;
+		padding-left:110px;
+		padding-right:50px;
+		font-family:sans-serif;
+		display:block;
+		padding-bottom:50px;
+	}
+
+	ol {
+		padding-left:0px;
+		margin-top:0px;
+		margin-bottom:0px;
+	}
+
+	li {
+		padding-top:2px;
+	}
+
+	ol ul {
+		padding-left:40px;
+		list-style:disc;
+	}
+
+	ul {
+	  list-style: disc;
+	  margin-top: 0px;
+	  margin-bottom:0px;
+	  padding-left: 0px;
+	}
+
+	td {
+		padding-right:8px;
+	}
+
+	.button {
+		font-size:16pt;
+		background-color: white;
+		color: black;
+		padding:5px;
+		cursor:default;
+		border:1px solid black;
+		margin-right:10px;
+		cursor:pointer;
+		text-decoration:none;
+	}
+
+	.button:hover {
+		background-color: black;
+		color: white;
+		cursor:pointer;
+	}
+
+	.clicked {
+		font-size:16pt;
+		background-color: black;
+		color: white;
+		padding:5px;
+		cursor:default;
+		border:1px solid black;
+		margin-right:10px;
+		text-decoration:none;
+	}
+
+</style>
+</head>
+
+<body>
+
+
+<div style="padding-top:20px;font-size:24pt;">
+	<span>Red fluorescence device construction</span>
+</div>
+
+
+<div style="padding-top:20px;width:600px;font-size:16pt">General</div>
+<ul style="width:600px;">
+	<li>The items listed in the bills of materials represent one set of vendor sources; costs can be reduced with alternative sources.</li>
+	<li>Access to a 3D printer and material is required.</li>
+	<li>Access to a soldering iron and solder materials is required.</li>
+	<li>Access to a hot glue gun to secure and insulate solder joints is recommended.</li>
+	<li>Access to basic tools (wire strippers, knife, tweezers, etc. ) is recommended.</li>
+	<li>Access to a power supply and multimeter is recommended.</li>
+	<li>Basic knowledge of soldering and electronics is required.</li>
+</ul>
+
+<div class="list" style="width:600px;font-size:16pt">Plaquefinder</div>
+
+<img src="./device-construction-images/a.png" style="padding-top:10px" height="498px"><img src="./device-construction-images/b.png" height="498px" style="padding-left:50px">
+
+<table style="padding-top:10px">
+<tbody><tr><td>Number in diagram</td><td>Part</td><td>Quantity</td><td>Item cost (USD)</td><td>Quantity cost (USD)</td><td>Preferred vendor</td></tr>
+<tr><td>1</td><td>Camera, USB, OEM board</td> <td>1</td> <td>$79</td> <td>$79</td> <td><a href="https://www.e-consystems.com/5mp-usb-cameraboard.asp">e-con Systems</a></td></tr>
+<tr><td>3</td><td>Lens, 6mm</td> <td>1</td> <td>$38</td> <td>$38</td> <td><a href="http://www.edmundoptics.com/optics/optical-lenses/plano-convex-pcx-spherical-singlet-lenses/vis-nir-coated-plano-convex-pcx-lenses/45467/">Edmund Optics</a></td></tr>
+<tr><td>4</td><td>Switch, on/off</td> <td>1</td> <td>$0.97</td> <td>$0.97</td> <td><a href="http://www.digikey.com/product-detail/en/c-k-components/BD01/CKN6012-ND/483982">Digi-Key</a></td></tr>
+<tr><td>5</td><td>Potentiometer</td> <td>1</td> <td>$3.27</td> <td>$3.27</td> <td><a href="http://www.digikey.com/product-detail/en/3360P-1-203LF/3360P-1-203LF-ND/3781672">Digi-Key</a></td></tr>
+<tr><td></td><td>Cable, USB</td> <td>1</td> <td>$3.34</td> <td>$3.34</td> <td><a href="https://www.amazon.com/AmazonBasics-USB-2-0-Cable--Male/dp/B00NH11N5A/ref=sr_1_4?ie=UTF8&amp;qid=1471295775&amp;sr=8-4&amp;keywords=usb+cable+2.0">Amazon</a></td></tr>
+<tr><td>7</td><td>Cable, header-in, pack of 120</td> <td>1</td> <td>$7.74</td> <td>$7.74</td> <td><a href="https://www.amazon.com/Jumper-Wire-Ribbons-M-M-M-F/dp/B017GQDXH2/ref=sr_1_7?ie=UTF8&amp;qid=1471295880&amp;sr=8-7&amp;keywords=jumper+solderless+cable">Amazon</a></td></tr>
+<tr><td></td><td>Epoxy, hard coat</td> <td>1</td> <td>$14.33</td> <td>$14.33</td> <td><a href="https://www.amazon.com/gp/product/B00CVYNQ4U?psc=1&amp;redirect=true&amp;ref_=oh_aui_detailpage_o01_s00">Amazon</a></td></tr>
+<tr><td></td><td>Quick-setting glue</td> <td>1</td> <td>$3.99</td> <td>$3.99</td> <td><a href="https://www.amazon.com/Krazy-Glue-KG82448R-Instant-0-106-Ounce/dp/B000RIZ9EW/ref=sr_1_3?ie=UTF8&amp;qid=1471297529&amp;sr=8-3&amp;keywords=crazy+glue">Amazon</a></td></tr>
+<tr><td>2</td><td>Chassis, 3D printed</td> <td>1</td> <td></td> <td></td> <td></td></tr>
+<tr><td></td><td>Chassis lid, 3D printed</td> <td>1</td> <td></td> <td></td> <td></td></tr>
+<tr><td>6</td><td>Chassis lid small cover, 3D printed</td> <td>1</td> <td></td> <td></td> <td></td></tr>
+<tr><td></td><td>Chassis end cap, 3D printed</td> <td>1</td> <td></td> <td></td> <td></td></tr>
+<tr><td></td><td>Misc.: Wires, solder, solder flux</td> <td></td> <td></td> <td></td> <td></td></tr>
+</tbody></table>
+
+<ol style="width:600px; padding-top:10px">
+	<li>Download and refer to the <a href="http://web.media.mit.edu/~pratiks/biomarker-imaging/stl_plaquefinder.zip">STL files</a>.</li>
+	<li>Gather components as per the above bill of materials.</li>
+	<li>Embed the switch (4) into the chassis (2) and secure with quick-setting glue.</li>
+	<li>Embed the potentiometer (5) into the chassis (2) and secure with quick-setting glue.</li>
+	<li>The switch (4) and potentiometer (5) should be close enough such that their wire terminals can be bent and soldered together. Note usable pin positions on the potentiometer from the manufacturer's datasheet.</li>
+	<li>Take a pair of female header-in cables and cut and strip their opposite ends.</li>
+	<li>Solder the stripped end of one female header-in cable to the potentiometer's out terminal (5).</li>
+	<li>Power for the LEDs is tapped from the camera USB cable. Carefully strip the USB cable to reveal the inner wires. The most common color codes for USB cables have their red and black wires supply power. Cut and strip the red and black wires; do not cut any other USB cables (most commonly white and green). Make sure that the point of insulation removal will ultimately be concealed by the chassis (2)
+	<ul><li>Note that if you are using a different camera board, the current draw will differ from the one listed in the bill of materials. Make sure there is enough available current to power multiple LEDs.</li></ul></li>
+	<li>Insert the USB cable through the bottom end of the handle grip on the chassis (2).</li>
+	<li>Rewind the stripped USB cable black wires while also adding the second header-in cable's stripped end into the node. Solder.</li>
+	<li>Solder a miscellaneous wire to the unsoldered switch (4) terminal.</li>
+	<li>Rewind the stripped USB cable red wires while also adding the wire from the previous step into the node. Solder.</li>
+	<li>The female ends of the header-in cables become the access point (7). The terminal ends should be fit and be flush with the chassis lid (6). Secure with quick-setting glue.
+	<ul><li>It is very important to note the positions of the positive (+) and negative (-) access point positions for future interchangeable head construction.</li></ul></li>
+	<li>Add the chassis lid small cover on top of the header-in access point to cover the wires.</li>
+	<li>Apply a very small amount of quick-setting glue to the chassis lid (6) where the lens (3) is seated, and place the lens. The lens can be rotated slightly after placement to spin the glue around the lens edges.
+	<ul><li>The recommended quick-setting glue in the bill of materials can be dissolved with acetone. If any glue accidentally is touched to the lens, carefully wipe it off with a soft, acetone-dampened cloth. Acetone can also dissolve many plastics used in 3D printing so take care when using it around the 3D printed components.</li></ul></li>
+	<li>Insert the camera board (1) into the chassis (2) and connect the USB cable.
+	<ul><li>Now is a good time to make sure the lens (3) is aligned with the camera aperture. Carefully place the chassis lid (6) into its seat on the chassis (2), and connect the camera. Reevaluate placement of components if the camera and lens are not aligned.</li>
+	<li>Now is also a good time to connect an interchangeable is connected to the access point (7) to ensure the LED circuit is in working order before the lid is fully sealed.</li></ul></li>
+	<li>Before placing the lid (6) permanently, it is a securing the inner components is highly recommended. Place dabs of quick-setting glue around the edge of the camera board (1) to fasten it to the chassis (2). Solder joints can be insulated and protected against bending stress with light applications of hot glue (hot-melt adhesive).</li>
+	<li>Place quick-setting adhesive around the perimeter of where the chassis lid is seated, and secure.</li>
+	<li>Place the chassis end cap onto the end of the chassis (2), with the USB cable exiting through the chassis end cap cutout. Secure with quick-setting glue.</li>
+	<li>Mix the hard-coat epoxy as per manufacturer's recommendation and carefully brush it onto the chassis. Avoid fouling the switch, potentiometer, lens, or access point with the epoxy, but make sure all voids and seams between components become filled. Use sparingly and only coat a few surfaces at a time, allowing full cure before handling again. The objective is to make the surfaces smooth and safe for mouth contact, easy to clean, and to protect the inner circuitry and components from external liquids as much as possible.
+	<ul><li>Also allow the epoxy to flow over the exiting USB cable area.</li>
+	<li>Multiple coats will give an illustrious and smooth device exterior.</li></ul></li>
+</ol>
+
+<div class="list" style="width:600px;font-size:16pt">Plaquefinder Interchangeable Head</div>
+
+<img src="./device-construction-images/c.png" height="152px" style="padding-top:10px"><img src="./device-construction-images/d.png" height="152px" style="padding-left:50px">
+
+<table style="padding-top:10px">
+<tbody><tr><td>Number in diagram</td><td>Part</td><td>Quantity</td><td>Item cost (USD)</td><td>Quantity cost (USD)</td><td>Preferred vendor</td></tr>
+<tr><td>11</td><td>Window, 20mm</td> <td>1</td> <td>$22.5</td> <td>$22.5</td> <td><a href="http://www.edmundoptics.com/optics/windows-diffusers/visible-windows/gorilla-glass-windows/83362/">Edmund Optics</a></td></tr>
+<tr><td>12</td><td>Window, 12.5mm</td> <td>1</td> <td>$8.7</td> <td>$8.7</td> <td><a href="http://www.edmundoptics.com/optics/windows-diffusers/visible-windows/float-glass-optical-windows/02105/">Edmund Optics</a></td></tr>
+<tr><td>10</td><td>Filter, 530nm</td> <td>1</td> <td>$22.5</td> <td>$22.5</td> <td><a href="http://www.edmundoptics.com/optics/optical-filters/longpass-edge-filters/longpass-glass-color-filters/54654/">Edmund Optics</a></td></tr>
+<tr><td>9</td><td>LEDs, 405nm</td> <td>6</td> <td>$0.57</td> <td>$3.42</td> <td><a href="http://www.mouser.com/Search/ProductDetail.aspx?R=VLMU3100-GS08virtualkey61370000virtualkey78-VLMU3100-GS08">Mouser</a></td></tr>
+<tr><td>13</td><td>Terminals, header-in, pack of 600</td> <td>1</td> <td>$4.09</td> <td>$4.09</td> <td><a href="https://www.amazon.com/Single-Header-Arduino-Prototype-Shield/dp/B00FR19WQA/ref=pd_sim_23_2?ie=UTF8&amp;dpID=41yL417yh6L&amp;dpSrc=sims&amp;preST=_AC_UL160_SR160%2C160_&amp;psc=1&amp;refRID=V16VP9WZM3XG5PCHVH3S">Amazon</a></td></tr>
+<tr><td></td><td>Resistor</td> <td></td> <td></td> <td></td> <td></td></tr>
+<tr><td></td><td>Epoxy, hard coat</td> <td>1</td> <td>$14.33</td> <td>$14.33</td> <td><a href="https://www.amazon.com/gp/product/B00CVYNQ4U?psc=1&amp;redirect=true&amp;ref_=oh_aui_detailpage_o01_s00">Amazon</a></td></tr>
+<tr><td></td><td>Quick-setting glue</td> <td>1</td> <td>$3.99</td> <td>$3.99</td> <td><a href="https://www.amazon.com/Krazy-Glue-KG82448R-Instant-0-106-Ounce/dp/B000RIZ9EW/ref=sr_1_3?ie=UTF8&amp;qid=1471297529&amp;sr=8-3&amp;keywords=crazy+glue">Amazon</a></td></tr>
+<tr><td>8</td><td>Chassis for head, 3D printed</td> <td>1</td> <td></td> <td></td> <td></td></tr>
+<tr><td></td><td>Misc.: Wires, solder, solder flux</td> <td></td> <td></td> <td></td> <td></td></tr>
+</tbody></table>
+
+<ol style="width:600px; padding-top:10px">
+	<li>Download and refer to the <a href="http://web.media.mit.edu/~pratiks/biomarker-imaging/stl_plaquefinder.zip">STL files</a>.</li>
+	<li>Gather components as per the above bill of materials.</li>
+	<li>Take a piece of stiff but bendable wire and wind it around a small, cylindrical object. The 530nm filter (10) is the ideal size for this, but be careful as to not scratch the filter surface when doing so. The goal is to obtain a circle of wire.</li>
+	<li>Bend a second circle of wire, but expand it slightly.</li>
+	<li>Place one wire circle into the other. These wire circles serve as rails that the LED array (9) will sit on and connect to. Place the LEDs on top of the rail (but do not solder) to make sure the wire circles are of appropriate size. Adjust as necessary.
+	<ul><li>Note that one rail will serve as the LED positive side (+), and one will serve as the LED negative (-) side.</li>
+	<li>Refer to the manufacturer's instructions as to how the LEDs are polarized.</li></ul></li>
+	<li>Solder the terminal of one LED to one rail. Then, place the other circular wire concentric to the first. The unsoldered LED terminal pads should now be sitting on the second wire. Solder this.
+	<ul><li>The construction of this LED array is challenging and requires patience and perseverance, but is achievable.</li></ul></li>
+	<li>Evenly place and solder the remaining LEDs one by one.</li>
+	<li>Once the ring is assembled, set a power supply set to the recommended LED voltage. Connect the supply to the rails with correct polarization. Note which LEDs are not powered and re-solder those.</li>
+	<li>Cut off a pair of header-in terminals.</li>
+	<li>Cut and strip two small wires, and solder each wire to the short end of the header-in terminals.</li>
+	<li>Solder the other end of each of the wires in the previous step to the ends of the LED array rails. The long ends of the header-in terminal strip (13) will become the electrical connection to the access point (7), so be sure the orientation of these terminals is correct in relation to the access point positive (+) and negative (-) sockets.</li>
+	<li>Drop the LED/terminal assembly into the head chassis (8) and carefully push the terminals through the square hole in the chassis.
+	<ul><li>It is recommended that the terminals are tested again to ensure all electrical connections are functional after pushing the terminals through the square hole.</li></ul></li>
+	<li>Secure the LED array and terminal assembly to the head chassis (8) with quick-setting glue.</li>
+	<li>Use quick-setting glue to attach the smaller rear window (12) to the chassis. The window can be rotated slightly after placement to spin the glue around the window edges.
+	<ul><li>The recommended quick-setting glue in the bill of materials can be dissolved with acetone. If any glue accidentally is touched to the windows, carefully wipe it off with a soft, acetone-dampened cloth. Acetone can also dissolve many plastics used in 3D printing so take care when using it around the 3D printed components.</li></ul></li>
+	<li>Place the filter (10) into its seat within the LED array and carefully secure with an extremely small amount of quick-setting glue. If there is too much glue, small seams will draw the glue to the interface between the filter (10) and small window (12) via capillary action.</li>
+	<li>Use quick-setting glue to attach the larger front window (11) to the chassis. The window can be rotated slightly after placement to spin the glue around the window edges.
+	<ul><li>It is recommended that all inner surfaces, especially the optical surfaces, have been cleaned before this step.</li></ul></li>
+	<li>Mix the hard-coat epoxy as per manufacturer's recommendation and carefully brush it onto the chassis. Avoid fouling the windows or header-in terminal (13) strip with the epoxy, but make sure all voids and seams between components become filled. Use sparingly and only coat a few surfaces at a time, allowing full cure before handling again. The objective is to make the surfaces smooth and safe for mouth contact, easy to clean, and to protect the inner circuitry and components from external liquids as much as possible.
+	<ul><li>Multiple coats will give an illustrious and smooth device exterior.</li></ul></li>
+</ol>
+
+<div class="list" style="width:600px;font-size:16pt">Plaquefinder Smartphone Variant</div>
+
+<img src="./device-construction-images/f.png" height="254px" style="padding-top:10px"><img src="./device-construction-images/g.png" height="254px" style="padding-left:50px">
+
+<table style="padding-top:10px">
+<tbody><tr><td>Number in diagram</td><td>Part</td><td>Quantity</td><td>Item cost (USD)</td><td>Quantity cost (USD)</td><td>Preferred vendor</td></tr>
+<tr><td>17</td><td>Window, 12.5mm</td> <td>1</td> <td>$8.7</td> <td>$8.7</td> <td><a href="http://www.edmundoptics.com/optics/windows-diffusers/visible-windows/float-glass-optical-windows/02105/">Edmund Optics</a></td></tr>
+<tr><td>15</td><td>Filter, 530nm</td> <td>1</td> <td>$22.5</td> <td>$22.5</td> <td><a href="http://www.edmundoptics.com/optics/optical-filters/longpass-edge-filters/longpass-glass-color-filters/54654/">Edmund Optics</a></td></tr>
+<tr><td>16</td><td>LEDs, 405nm</td> <td>6</td> <td>$0.57</td> <td>$3.42</td> <td><a href="http://www.mouser.com/Search/ProductDetail.aspx?R=VLMU3100-GS08virtualkey61370000virtualkey78-VLMU3100-GS08">Mouser</a></td></tr>
+<tr><td>18</td><td>Cable, USB OTG</td> <td>1</td> <td>$5.99</td> <td>$5.99</td> <td><a href="https://www.amazon.com/gp/product/B00ZYB44UW/ref=od_aui_detailpages00?ie=UTF8&amp;psc=1">Amazon</a></td></tr>
+<tr><td></td><td>Resistor, </td> <td></td> <td></td> <td></td> <td></td></tr>
+<tr><td></td><td>Epoxy, hard coat</td> <td>1</td> <td>$14.33</td> <td></td> <td><a href="https://www.amazon.com/gp/product/B00CVYNQ4U?psc=1&amp;redirect=true&amp;ref_=oh_aui_detailpage_o01_s00">Amazon</a></td></tr>
+<tr><td></td><td>Quick-setting glue</td> <td>1</td> <td>$3.99</td> <td></td> <td><a href="https://www.amazon.com/Krazy-Glue-KG82448R-Instant-0-106-Ounce/dp/B000RIZ9EW/ref=sr_1_3?ie=UTF8&amp;qid=1471297529&amp;sr=8-3&amp;keywords=crazy+glue">Amazon</a></td></tr>
+<tr><td>14</td><td>Chassis for smartphone attachment, 3D printed</td> <td>1</td> <td></td> <td></td> <td></td></tr>
+<tr><td></td><td>Misc.: Wires, solder, solder flux</td> <td></td> <td></td> <td></td> <td></td></tr>
+</tbody></table>
+
+<ol style="width:600px; padding-top:10px">
+	<li>Download and refer to the <a href="http://web.media.mit.edu/~pratiks/biomarker-imaging/stl_plaquefinder_smartphone_attachment.zip">STL files</a>.</li>
+	<li>Gather components as per the above bill of materials.</li>
+	<li>Take a piece of stiff but bendable wire and wind it around a small, cylindrical object. A thick pen is the ideal size for this; the goal is to obtain a circle of wire that fits into the main chassis (14) optics hole.</li>
+	<li>Bend a second circle of wire smaller than the first.</li>
+	<li>Place one wire circle into the other. These wire circles serve as rails that the LED array (16) will sit on and connect to. Place the LEDs on top of the rail (but do not solder) to make sure the wire circles are of appropriate size. Adjust as necessary.
+	<ul><li>Note that one rail will serve as the LED positive side (+), and one will serve as the LED negative (-) side.</li>
+	<li>Refer to the manufacturer's instructions as to how the LEDs are polarized.</li></ul></li>
+	<li>Solder the terminal of one LED to one rail. Then, place the other circular wire concentric to the first. The unsoldered LED terminal pads should now be sitting on the second wire. Solder this.
+	<ul><li>The construction of this LED array is challenging and requires patience and perseverance, but is achievable.</li></ul></li>
+	<li>Evenly place and solder the remaining LEDs one by one.</li>
+	<li>Once the ring is assembled, set a power supply set to the recommended LED voltage. Connect the supply to the rails with correct polarization. Note which LEDs are not powered and re-solder those.</li>
+	<li>Power for the LEDs is tapped from an USB OTG cable. Carefully strip the USB cable to reveal the inner wires. Unlike regular USB cables, USB OTG cables have five wires. OTG cables are less color-standardized than regular USB cables, so it may be necessary to connect the cut cable to the smartphone and measure cable combinations until the 5V potential is found. Disconnect from smartphone when finished.</li>
+	<li>Feed the stripped end (18) into the bottom hole of the main chassis (14).</li>
+	<li>Cut and strip one of the USB OTG power cables shorter length; this will serve as the placement point for the power dissipating resistor.</li>
+	<li>Cut one of the resistor wires as short as possible while still being able to achieve a solder joint. Connect this short side to the shorter USB OTG cable.</li>
+	<li>Solder the USB OTG power wire and the unsoldered resistor wire each to a LED array rail, taking care to solder terminals correctly in relation to positive (+) and negative (-) current draw.</li>
+	<li>Slowly guide the LED/terminal assembly into the main chassis (14) optics hole while carefully pulling the USB OTG cable.</li>
+	<li>Sandwich the LED array between a filter (15) and window (17). Edges can be secured with quick-setting glue if desired.
+	<ul><li>The recommended quick-setting glue in the bill of materials can be dissolved with acetone. If any glue accidentally is touched to the window or filter, carefully wipe it off with a soft, acetone-dampened cloth. Acetone can also dissolve many plastics used in 3D printing so take care when using it around the 3D printed components.</li></ul></li>
+	<li>Mix the hard-coat epoxy as per manufacturer's recommendation and carefully brush it onto the chassis. Avoid fouling the filter (15) or window (17) with the epoxy, but make sure all voids and seams between components become filled. Use sparingly and only coat a few surfaces at a time, allowing full cure before handling again. The objective is to make the surfaces smooth and safe for mouth contact, easy to clean, and to protect the inner circuitry and components from external liquids as much as possible.
+	<ul><li>Also allow the epoxy to flow over the exiting USB OTG cable area.</li>
+	<li>Multiple coats will give an illustrious and smooth device exterior.</li></ul></li>
+</ol>
+<div style="padding-top:40px">Last updated 15 August 2016.</div>
+
+
+
+</body></html>
